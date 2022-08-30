@@ -1,0 +1,63 @@
+4. Iniciando o projeto
+4.1. Definindo o projeto
+
+Nome do sistema: DOCMANAGER
+Descrição: Aplicação para gerenciamento de documentos.
+Objetivo: Gerenciar um ou vários documentos em sistema computacional.
+
+4.1.1. Requisitos do Projeto
+
+Entidades do Projeto:
+
+Todas as entidades específicas do projeto(exceto relacionais) devem tevem ter obrigatoriamente os seguintes atributos:
+* id, code, name, description, type e status;
+* Os demais atributos serão característicos de cada classe.
+
+Todas a entidades relacionais do projeto devem ter obrigatoriamente os seguintes atributos:
+* id da tabela1, id da tabela2, data inicial e data final, 
+
+Entidades específicas e seus atributos
+
+-> Document
+	* atributos padrão
+	* numero
+	* acronimo
+	* data de emissão
+	* data de validade se houver
+	
+-> Attachment
+	* atributos padrão	
+
+-> Properties
+	* atributos padrão
+	* link
+
+-> Category
+	* atributos padrão
+
+Requisitos Funcionais / Funcionalidades do sistema
+
+1-Permitir o cadastro de documento
+2-Permitir acessar documento registrado
+3-Permitir atualizar documento
+4-Permitir excluir documento
+
+4.1.2. Regras de negócio
+
+1-O sistema não terá login.
+2-Não haverá conceito de usuário.
+3-Todo documento deve pertencer a uma categoria.
+4-Todo documento deve possuir suas propriedades definidas.
+5-Um documento pode possuir uma ou mais categorias.
+6-Um documento pode ter ou não um anexo.
+7-Uma categoria pode possuir mais de um documento.
+
+Tecnologias
+* Modelagem de Dados: PowerArchitect
+* Banco de Dados: MySql
+* Back-End: Java
+
+
+
+
+
