@@ -1,97 +1,77 @@
 package Class;
 
-public class Vehicle {
+public abstract class Vehicle {
 
-    //Declaração dos atributos da classe;
-    private String vehicle;
-    private String model;
-    private String color;
-    private String label;
-    private String status;
+    private String typeVehicle;
+    private String wheelsVehicle;
+    private String nameVehicle;
+    private String typeFuelVehicle;
+    private String brandVehicle;
+    private double weightVehicle;
+    private double sizeVehicle;
+    private int numberPassengers;
 
-    //Declaração do métodos get e set
-    public String getVehicle() {
-        return vehicle;
-    }
-
-    public void setVehicle(String vehicle) {
-        this.vehicle = vehicle;
+    public String getTypeVehicle() {
+        return typeVehicle;
     }
 
-    public String getModel() {
-        return model;
+    public void setTypeVehicle(String typeVehicle) {
+        this.typeVehicle = typeVehicle;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public String getWheelsVehicle() {
+        return wheelsVehicle;
     }
 
-    public String getColor() {
-        return color;
+    public void setWheelsVehicle(String wheelsVehicle) {
+        this.wheelsVehicle = wheelsVehicle;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public String getNameVehicle() {
+        return nameVehicle;
     }
 
-    public String getLabel() {
-        return label;
+    public void setNameVehicle(String nameVehicle) {
+        this.nameVehicle = nameVehicle;
     }
 
-    public void setLabel(String label) {
-        this.label = label;
+    public String getTypeFuelVehicle() {
+        return typeFuelVehicle;
     }
 
-    public String getStatus() {
-        return status;
+    public void setTypeFuelVehicle(String typeFuelVehicle) {
+        this.typeFuelVehicle = typeFuelVehicle;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-    
-    //Declaração dos construtores da classe.
-    public Vehicle() {
+    public String getBrandVehicle() {
+        return brandVehicle;
     }
 
-    public Vehicle(String vehicle, String model, String color, String label, String status) {
-        this.vehicle = vehicle;
-        this.model = model;
-        this.color = color;
-        this.label = label;
-        this.status = status;
+    public void setBrandVehicle(String brandVehicle) {
+        this.brandVehicle = brandVehicle;
     }
 
-    public Vehicle(String vehicle, String model, String color, String label) {
-        this.vehicle = vehicle;
-        this.model = model;
-        this.color = color;
-        this.label = label;
-    }
-    
-    public Vehicle(String vehicle, String model, String color) {
-        this.vehicle = vehicle;
-        this.model = model;
-        this.color = color;
+    public double getWeightVehicle() {
+        return weightVehicle;
     }
 
-    public Vehicle(String vehicle, String model) {
-        this.vehicle = vehicle;
-        this.model = model;
-    }
-        
-    public Vehicle(String vehicle) {
-        this.vehicle = vehicle;
+    public void setWeightVehicle(double weightVehicle) {
+        this.weightVehicle = weightVehicle;
     }
 
-    @Override
-    public String toString() {
-        return this.getModel() 
-             + this.getVehicle()
-             + this.getColor()
-             + this.getLabel()
-             + this.getStatus();
+    public double getSizeVehicle() {
+        return sizeVehicle;
     }
-    
-    
+
+    public void setSizeVehicle(double sizeVehicle) {
+        this.sizeVehicle = sizeVehicle;
+    }
+
+    public int getNumberPassengers() {
+        return numberPassengers;
+    }
+
+    public void setNumberPassengers(int numberPassengers) {
+        this.numberPassengers = numberPassengers;
+    }
 }
