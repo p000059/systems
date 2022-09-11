@@ -89,7 +89,7 @@
   <table id="TAB23" populated="true" UUID="e2dfd504-e7d8-47f5-8e2f-39f8ae4f4fe6" name="category_document" objectType="TABLE" physicalName="category_document" >
    <remarks></remarks>
    <folder id="FOLTAB231" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL24" populated="true" UUID="86ce8d7d-aa9a-47b0-8a56-a76e675a2451" autoIncrement="false" autoIncrementSequenceName="category_document_id_document_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+    <column id="COL24" populated="true" UUID="86ce8d7d-aa9a-47b0-8a56-a76e675a2451" autoIncrement="false" autoIncrementSequenceName="category_document_id_document_seq" defaultValue="" name="id_document" nullable="0" physicalName="id_document" precision="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
      <remarks></remarks>
     </column>
     <column id="COL25" populated="true" UUID="289c235c-ccc2-407b-81a9-1d9323598401" autoIncrement="false" autoIncrementSequenceName="category_document_id_category_document_seq" defaultValue="" name="id_category_document" nullable="0" physicalName="id_category_document" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
@@ -155,7 +155,7 @@
     <column id="COL41" populated="true" UUID="1dacd468-be10-4fe1-8693-9d5ce1bcbd5f" autoIncrement="false" autoIncrementSequenceName="rl_path_document_id_path_seq" defaultValue="" name="id_properties" nullable="0" physicalName="id_properties" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
      <remarks></remarks>
     </column>
-    <column id="COL42" populated="true" UUID="5e2a579e-3b91-4151-9552-799fad26c9dd" autoIncrement="false" autoIncrementSequenceName="properties_document_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+    <column id="COL42" populated="true" UUID="5e2a579e-3b91-4151-9552-799fad26c9dd" autoIncrement="false" autoIncrementSequenceName="properties_document_id_seq" defaultValue="" name="id_document" nullable="0" physicalName="id_document" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
      <remarks></remarks>
     </column>
     <column id="COL43" populated="true" UUID="b2facf2f-0be4-4b04-afb7-f4659bf5c50a" autoIncrement="false" autoIncrementSequenceName="properties_document_dt_initial_seq" defaultValue="" name="dt_initial" nullable="0" physicalName="dt_initial" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
@@ -212,7 +212,7 @@
     <column id="COL56" populated="true" UUID="ec0d836a-ce31-4074-a2aa-b93c014167f3" autoIncrement="false" autoIncrementSequenceName="document_attachment_id_attachment_seq" defaultValue="" name="id_attachment" nullable="0" physicalName="id_attachment" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
      <remarks></remarks>
     </column>
-    <column id="COL57" populated="true" UUID="a7b15ea5-aef4-41c3-b10b-9e8f5ab503aa" autoIncrement="false" autoIncrementSequenceName="document_attachment_id_document_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
+    <column id="COL57" populated="true" UUID="a7b15ea5-aef4-41c3-b10b-9e8f5ab503aa" autoIncrement="false" autoIncrementSequenceName="document_attachment_id_document_seq" defaultValue="" name="id_document" nullable="0" physicalName="id_document" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
      <remarks></remarks>
     </column>
     <column id="COL58" populated="true" UUID="5657aef6-0bdc-402a-a72a-e711640d5d70" autoIncrement="false" autoIncrementSequenceName="document_attachment_dt_initial_seq" defaultValue="" name="dt_initial" nullable="0" physicalName="dt_initial" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
