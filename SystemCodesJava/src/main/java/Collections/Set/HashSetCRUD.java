@@ -103,8 +103,7 @@ public class HashSetCRUD {
 		hashSetCRUD.updateItem(hashSetCRUD.getList(), "Marilene", "Nubiane")
 		.stream()
 		.sorted()
-		.forEach(p -> System.out.println("Value: " + p));;
-
+		.forEach(p -> System.out.println("Value: " + p));
 	}
 
 }

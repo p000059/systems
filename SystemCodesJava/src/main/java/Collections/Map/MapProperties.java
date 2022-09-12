@@ -1,11 +1,16 @@
 package Collections.Map;
 
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Properties;
 
 public class MapProperties {
 
 	public static void main(String[] args) {
+		
+		Map<Integer, Object> ht = new HashMap<>();
 		
 		Map<Object,Object> sourceMap = new Properties(); 
 		
