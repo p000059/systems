@@ -20,7 +20,7 @@ public class DAOPerson {
 			String sqlInsert = "insert into Person(namePerson, emailPerson) values(?,?)";
 
 			PreparedStatement insert = connection.prepareStatement(sqlInsert);
-			insert.setString(1, objPerson.getNamePerson());
+			insert.setString(1, objPerson.getName());
 //			insert.setString(2, objPerson.getEmailPerson());
 			insert.execute();
 			connection.commit();

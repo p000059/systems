@@ -13,10 +13,14 @@ import javax.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name="person")
 public class Person implements Serializable {
 	
@@ -28,7 +32,7 @@ public class Person implements Serializable {
 	private Long idPerson;
 
 	@Column(name = "name", nullable = true)
-	private String namePerson;
+	private String name;
 	
 	@OneToMany(mappedBy = "person")
 	@Column(name = "id_fone", nullable = true)

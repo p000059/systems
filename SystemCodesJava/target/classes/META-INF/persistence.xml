@@ -6,8 +6,10 @@
 		<!-- provedor/implementacao do JPA -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-		<!-- entidade mapeada -->
+		<!-- entidades mapeadas -->
 		<class>Persistence.Person</class>
+		<class>Persistence.Fone</class>
+		<class>Persistence.Email</class>
 
 		<properties>
 			<!-- dados da conexao -->
