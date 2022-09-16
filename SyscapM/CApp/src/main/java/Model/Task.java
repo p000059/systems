@@ -1,5 +1,6 @@
 package Model;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,10 +20,8 @@ public class Task {
     private String name;
     private String description;
     private String notes;
-    private boolean isCompleted;
-    private LocalDate deadLine;
-    private LocalDate createdAt;
-    private LocalDate updatedAt;
-    
-    
+    private Boolean isCompleted;
+    private Date deadLine;
+    private Date createdAt;
+    private Date updatedAt;
 }

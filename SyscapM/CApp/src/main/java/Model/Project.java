@@ -1,10 +1,9 @@
 package Model;
 
-import java.time.LocalDate;
+import java.sql.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
@@ -15,11 +14,9 @@ import lombok.ToString;
 @ToString
 public class Project {
     
-    private Long id;
+    private int id;
     private String name;
     private String description;
-    private LocalDate date_created;
-    private LocalDate date_update;
-    
-    
+    private Date createdAt;
+    private Date updatedAt;
 }
