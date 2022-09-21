@@ -1,8 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package View;
+
+import java.awt.Color;
+import java.awt.Font;
 
 /**
  *
@@ -15,6 +14,7 @@ public class MainStream extends javax.swing.JFrame {
      */
     public MainStream() {
         initComponents();
+        decorateTableTasks();
     }
 
     /**
@@ -36,16 +36,16 @@ public class MainStream extends javax.swing.JFrame {
         PanelProjectList = new javax.swing.JPanel();
         jScrollPanelProjects = new javax.swing.JScrollPane();
         ListProjects = new javax.swing.JList<>();
-        PanelTasks = new javax.swing.JPanel();
+        GridTask = new javax.swing.JPanel();
         EmptyList = new javax.swing.JPanel();
-        EmptyListTitle = new javax.swing.JLabel();
-        EmptyListIcon = new javax.swing.JLabel();
-        EmptyListSubtitle = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TableTasks = new javax.swing.JTable();
         AddTask = new javax.swing.JButton();
         AddProject = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(800, 600));
+        setMaximumSize(new java.awt.Dimension(1024, 768));
+        setMinimumSize(new java.awt.Dimension(700, 600));
 
         Toolbar.setBackground(new java.awt.Color(255, 0, 0));
 
@@ -155,57 +155,69 @@ public class MainStream extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        PanelTasks.setBackground(new java.awt.Color(255, 255, 255));
-        PanelTasks.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        GridTask.setBackground(new java.awt.Color(255, 255, 255));
+        GridTask.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         EmptyList.setBackground(new java.awt.Color(255, 255, 255));
-
-        EmptyListTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        EmptyListTitle.setText("Nenhuma tarefe por aqui.");
-
-        EmptyListIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        EmptyListIcon.setText("Listas");
-
-        EmptyListSubtitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        EmptyListSubtitle.setText("Clique em \"+\" para adicionar tarefa");
 
         javax.swing.GroupLayout EmptyListLayout = new javax.swing.GroupLayout(EmptyList);
         EmptyList.setLayout(EmptyListLayout);
         EmptyListLayout.setHorizontalGroup(
             EmptyListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EmptyListLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(EmptyListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(EmptyListIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(EmptyListTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(EmptyListSubtitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         EmptyListLayout.setVerticalGroup(
             EmptyListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EmptyListLayout.createSequentialGroup()
-                .addGap(324, 324, 324)
-                .addComponent(EmptyListIcon)
-                .addGap(42, 42, 42)
-                .addComponent(EmptyListTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EmptyListSubtitle)
-                .addContainerGap(377, Short.MAX_VALUE))
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout PanelTasksLayout = new javax.swing.GroupLayout(PanelTasks);
-        PanelTasks.setLayout(PanelTasksLayout);
-        PanelTasksLayout.setHorizontalGroup(
-            PanelTasksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelTasksLayout.createSequentialGroup()
+        TableTasks.setBackground(new java.awt.Color(255, 255, 255));
+        TableTasks.setForeground(new java.awt.Color(102, 102, 102));
+        TableTasks.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Nome", "Descrição", "Prazo", "Tarefa Concluída"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(TableTasks);
+
+        javax.swing.GroupLayout GridTaskLayout = new javax.swing.GroupLayout(GridTask);
+        GridTask.setLayout(GridTaskLayout);
+        GridTaskLayout.setHorizontalGroup(
+            GridTaskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GridTaskLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(EmptyList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(GridTaskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
+                    .addComponent(EmptyList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        PanelTasksLayout.setVerticalGroup(
-            PanelTasksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelTasksLayout.createSequentialGroup()
+        GridTaskLayout.setVerticalGroup(
+            GridTaskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GridTaskLayout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 792, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(EmptyList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -250,9 +262,9 @@ public class MainStream extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(PanelTask, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(AddTask, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addComponent(PanelTasks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(AddTask, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(GridTask, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,14 +274,14 @@ public class MainStream extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PanelProject, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PanelTask, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(AddProject, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                    .addComponent(AddProject, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(AddTask, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(PanelProjectList, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
-                    .addComponent(PanelTasks, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(GridTask, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
@@ -294,7 +306,7 @@ public class MainStream extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Java swing".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -322,19 +334,26 @@ public class MainStream extends javax.swing.JFrame {
     private javax.swing.JButton AddProject;
     private javax.swing.JButton AddTask;
     private javax.swing.JPanel EmptyList;
-    private javax.swing.JLabel EmptyListIcon;
-    private javax.swing.JLabel EmptyListSubtitle;
-    private javax.swing.JLabel EmptyListTitle;
+    private javax.swing.JPanel GridTask;
     private javax.swing.JList<String> ListProjects;
     private javax.swing.JPanel PanelProject;
     private javax.swing.JPanel PanelProjectList;
     private javax.swing.JPanel PanelTask;
-    private javax.swing.JPanel PanelTasks;
     private javax.swing.JLabel ProjectTitle;
     private javax.swing.JLabel SubTitle;
+    private javax.swing.JTable TableTasks;
     private javax.swing.JLabel TaskTitle;
     private javax.swing.JLabel Title;
     private javax.swing.JPanel Toolbar;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPanelProjects;
     // End of variables declaration//GEN-END:variables
+
+    public void decorateTableTasks(){
+        
+        TableTasks.getTableHeader().setFont(new Font("Segor UI", Font.BOLD, 14));
+        TableTasks.getTableHeader().setBackground(new Color(255,255,255));
+        TableTasks.getTableHeader().setForeground(Color.red);
+        TableTasks.getAutoCreateRowSorter();
+    }
 }
