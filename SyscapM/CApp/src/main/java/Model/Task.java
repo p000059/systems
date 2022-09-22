@@ -15,8 +15,8 @@ import lombok.ToString;
 @ToString
 public class Task {
     
-    private Long id;
-    private Long id_project;
+    private int id;
+    private int id_project;
     private String name;
     private String description;
     private String notes;

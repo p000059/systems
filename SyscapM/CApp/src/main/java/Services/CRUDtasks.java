@@ -111,8 +111,8 @@ public class CRUDtasks {
             while (resultSet.next()) {
 
                 Task task = new Task();
-                task.setId(resultSet.getLong("id"));
-                task.setId_project(resultSet.getLong("id_Project"));
+                task.setId(resultSet.getInt("id"));
+                task.setId_project(resultSet.getInt("id_Project"));
                 task.setName(resultSet.getString("name"));
                 task.setDescription(resultSet.getString("description"));
                 task.setNotes(resultSet.getString("notes"));

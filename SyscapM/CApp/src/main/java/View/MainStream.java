@@ -2,6 +2,9 @@ package View;
 
 import java.awt.Color;
 import java.awt.Font;
+import Model.Project;
+import Controller.ProjectController;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -9,12 +12,17 @@ import java.awt.Font;
  */
 public class MainStream extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MainStream
-     */
+
+    private Project project;
+    private ProjectController projectController;
+    private DefaultListModel<Project> defaultListModel;
+    
     public MainStream() {
+        
         initComponents();
         decorateTableTasks();
+        initDataController();
+        
     }
 
     /**
@@ -292,7 +300,9 @@ public class MainStream extends javax.swing.JFrame {
     }//GEN-LAST:event_AddTaskActionPerformed
 
     private void AddProjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddProjectActionPerformed
-        // TODO add your handling code here:
+    
+        ProjectDialogScreen projectDialogScreen = new ProjectDialogScreen(this, rootPaneCheckingEnabled);
+        projectDialogScreen.setVisible(true);
     }//GEN-LAST:event_AddProjectActionPerformed
 
     /**
@@ -355,5 +365,17 @@ public class MainStream extends javax.swing.JFrame {
         TableTasks.getTableHeader().setBackground(new Color(255,255,255));
         TableTasks.getTableHeader().setForeground(Color.red);
         TableTasks.getAutoCreateRowSorter();
+    }
+    
+    public void initDataController(){
+        
+        projectController = new ProjectController();
+        project = new Project();
+        
+        project.getId();
+        project.getName();
+        project.getDescription();
+        
+        
     }
 }

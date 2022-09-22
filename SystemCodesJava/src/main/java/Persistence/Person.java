@@ -15,12 +15,16 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 @Table(name="person")
 public class Person implements Serializable {
 	
@@ -29,20 +33,20 @@ public class Person implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private Long idPerson;
+	private Long id;
 
 	@Column(name = "name", nullable = true)
 	private String name;
 	
-	@OneToMany(mappedBy = "person")
-	@Column(name = "id_fone", nullable = true)
-	private List<Fone> id_fone;
+//	@OneToMany(mappedBy = "person")
+//	@Column(name = "id_fone", nullable = true)
+//	private List<Fone> id_fone;
 
-	@OneToMany(mappedBy = "email")
-	@Column(name = "id_email", nullable = true)
-	private List<Email> id_email;
+//	@OneToMany(mappedBy = "email")
+//	@Column(name = "id_email", nullable = true)
+//	private List<Email> id_email;
 
-	@Column(name = "date_birth", nullable = true)
-	@Temporal(TemporalType.DATE)
-	private LocalDate date_birth;
+//	@Column(name = "date_birth", nullable = true)
+//	@Temporal(TemporalType.DATE)
+//	private LocalDate date_birth;
 }
