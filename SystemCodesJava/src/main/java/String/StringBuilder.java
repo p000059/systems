@@ -17,7 +17,7 @@ public class StringBuilder {
 
 		JOptionPane.showMessageDialog(null, "1 - " + alphabet);
 		
-		StringBuffer stringBuffer = new StringBuffer(); //É mais utilizada com Threads.
+		StringBuffer stringBuffer = new StringBuffer(); //É mais utilizada com Thread.
 		
 		for(String letter : letters) {
 			

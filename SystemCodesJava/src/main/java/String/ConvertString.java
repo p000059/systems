@@ -16,7 +16,7 @@ public class ConvertString {
 		
 		
 		JOptionPane.showMessageDialog(null, 
-				"Date in Integer: " + date 
+				"Dates in Integer: " + date 
 				+ "\nDate from integer to String: " + convertedDate
 				+ "\nDate in String: " + dateNasc
 				+"\nDate to Integer: " + convertedDateToInt
