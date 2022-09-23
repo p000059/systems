@@ -12,7 +12,7 @@ public class HibernateUtil {
 	public static EntityManagerFactory factory = null;
 	
 	//Sempre que for chamado a classe HibernateUtil, o método initRead() será chamado, assim evita-se que o projeto chame duas vezes o método initRead.
-	//Qualquer método colocado dentro desse bloco estático poderá ser chamado em qualquer lugar do projeto sem que haja a instanciação da classe HibernateUtil.
+	//Qualquer método colocado dentro desse bloco estático poderá ser chamado em qualquer lugar da projeto sem que haja a instanciação da classe HibernateUtil.
 	static {
 		initRead();
 	}
