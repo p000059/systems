@@ -1,5 +1,3 @@
-//Essa interface implementa um método padrão.
-
 package Interfaces;
 
 public interface StandartMethod {

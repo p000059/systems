@@ -9,12 +9,13 @@ public class PersonalException {
         for(int i = 0; i < numeros.length; i++){
             try{
                 if(numeros[i] % 2 != 0){
-                    //lançar exceção
-                    throw new ErroException(numeros[i], demon[i]);
+                    
+                    throw new FixException("Não divisível por 0 !");
                 }
+                
                 System.out.println(numeros[i] + "/" + demon[i] + " = " + (numeros[i]/demon[i]));
             }
-            catch(ArithmeticException | ArrayIndexOutOfBoundsException | ErroException e){
+            catch(ArithmeticException | ArrayIndexOutOfBoundsException e){
                 e.printStackTrace(); 
             }
 

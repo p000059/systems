@@ -31,5 +31,4 @@ public class StringBuilder {
 		JOptionPane.showMessageDialog(null, "3.1 - " + stringBuffer.reverse());
 		
 	}
-
 }

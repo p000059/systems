@@ -1,0 +1,67 @@
+package Model.Util;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class Util {
+	
+	private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+	private static final String URL = "jdbc:mysql://localhost:3306/dbspringboot";
+	private static final String USER = "DBUSER";
+	private static final String PASSWORD = "mysql";
+    
+	protected static Connection connection;
+	protected static PreparedStatement pstm;
+	protected static ResultSet resultSet;
+
+	public static Connection open() throws Exception {
+
+		
+		try {
+
+			Class.forName(DRIVER);
+
+		} catch (ClassNotFoundException ex) {
+
+			ex.printStackTrace();
+		}
+		
+		try {
+			
+			connection = DriverManager.getConnection(URL, USER, PASSWORD);
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		return connection;
+	}
+
+	public static void close() throws Exception {
+
+		try {
+			
+			if((connection != null)) {
+				
+				connection.close();
+			}
+			
+			if((pstm != null)) {
+				
+				pstm.close();
+			}
+			
+			if((resultSet != null)) {
+			
+				resultSet.close();
+			}
+			
+		} catch (SQLException ex) {
+			
+			ex.printStackTrace();
+		}
+	}
+}

@@ -6,6 +6,20 @@ import java.util.Optional;
 
 public class OptionalOperations<T> {
 
+	public Optional<T> findObject(T objectSource){
+		
+		try {
+			
+			Optional<T> outPutObject = Optional.of(objectSource);
+			return outPutObject;
+			
+		} catch (Exception e) {
+			
+			return Optional.empty();
+			
+		}
+	}
+	
 	public Optional<Integer> reduceElements(List<Integer> sourceList) {
 		
 		try {
