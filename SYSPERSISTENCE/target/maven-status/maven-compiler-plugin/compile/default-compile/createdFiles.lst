@@ -1,0 +1,8 @@
+DAL\Class\Person$PersonBuilder.class
+DAL\DAO\DAOGeneric.class
+DAL\Class\Email$EmailBuilder.class
+DAL\Util\Util.class
+DAL\Class\Person.class
+App\AppJPA.class
+DAL\Class\Email.class
+DAL\Interface\EntityBase.class

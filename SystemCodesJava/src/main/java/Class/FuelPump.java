@@ -1,5 +1,5 @@
 package Class;
-//Program that shows how a fuel pump works.
+//Programs that shows how a fuel pump works.
 
 import javax.swing.JOptionPane;
 

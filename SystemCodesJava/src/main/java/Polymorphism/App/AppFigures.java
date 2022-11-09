@@ -21,7 +21,7 @@ public class AppFigures {
 		square.setType("Square");
 		
 		triangle.setName("Figure");
-		triangle.setType("Triangle");
+		triangle.setType("AppTriangle");
 		
 		JOptionPane.showMessageDialog(null, 
 				"Type: " + square.getType() 

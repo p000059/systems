@@ -3,6 +3,8 @@ package Lambdas;
 
 import javax.swing.JOptionPane;
 
+import Lambdas.Interfaces.IGenericInterface;
+
 public class BlockLambda {
 
     public static void main(String[] args) {
