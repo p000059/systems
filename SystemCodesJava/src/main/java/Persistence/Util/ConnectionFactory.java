@@ -5,11 +5,11 @@ import java.sql.*;
 public class ConnectionFactory {
 
     public static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    public static final String URL = "jdbc:mysql://localhost:3306/appcap";
+    public static final String URL = "jdbc:mysql://localhost:3306/dbcodes";
     public static final String USER = "DBUSER";
     public static final String PASSWORD = "mysql";
 
-    public static Connection getConnection() {
+    public static Connection openConnection() {
 
         try {
 
@@ -41,10 +41,14 @@ public class ConnectionFactory {
 
         try {
 
-            if ((connection != null) && (statement != null)) {
+            if (connection != null) {
 
                 connection.close();
-                statement.close();
+            }
+            
+            if(statement != null) {
+            	
+            	statement.close();
             }
 
         } catch (Exception e) {
@@ -57,10 +61,14 @@ public class ConnectionFactory {
 
         try {
 
-            if ((connection != null) && (statement != null)) {
+            if (connection != null) {
 
                 connection.close();
-                statement.close();
+            }
+            
+            if(statement != null) {
+            	
+            	statement.close();
             }
             
             if(resultSet != null){

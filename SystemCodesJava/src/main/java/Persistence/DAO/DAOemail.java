@@ -15,7 +15,7 @@ public class DAOemail extends Utill implements IDAO<Emaill> {
 
 		try {
 
-			Utill.open();
+			Utill.openConnection();
 			pstm = connection.prepareStatement(sql);
 			pstm.setString(1, object.getEmail());
 			pstm.setBoolean(2, object.getStatus());
@@ -30,7 +30,7 @@ public class DAOemail extends Utill implements IDAO<Emaill> {
 
 			try {
 				
-				Utill.close();
+				Utill.closeConnection();
 				
 			} catch (Exception e) {
 				
@@ -47,7 +47,7 @@ public class DAOemail extends Utill implements IDAO<Emaill> {
 
 		try {
 
-			Utill.open();
+			Utill.openConnection();
 			pstm = connection.prepareStatement(sql);
 			pstm.setInt(1, object);
 			resultSet = pstm.executeQuery();
@@ -69,7 +69,7 @@ public class DAOemail extends Utill implements IDAO<Emaill> {
 
 			try {
 
-				Utill.close();
+				Utill.closeConnection();
 
 			} catch (Exception ex) {
 
@@ -89,7 +89,7 @@ public class DAOemail extends Utill implements IDAO<Emaill> {
 
 		try {
 
-			Utill.open();
+			Utill.openConnection();
 			pstm = connection.prepareStatement(sql);
 			resultSet = pstm.executeQuery();
 
@@ -110,7 +110,7 @@ public class DAOemail extends Utill implements IDAO<Emaill> {
 
 			try {
 
-				Utill.close();
+				Utill.closeConnection();
 
 			} catch (Exception ex) {
 
@@ -129,7 +129,7 @@ public class DAOemail extends Utill implements IDAO<Emaill> {
 
 		try {
 
-			Utill.open();
+			Utill.openConnection();
 			pstm = connection.prepareStatement(sql);
 			pstm.setString(1, object.getEmail());
 			pstm.setBoolean(2, object.getStatus());
@@ -143,7 +143,7 @@ public class DAOemail extends Utill implements IDAO<Emaill> {
 
 			try {
 
-				Utill.close();
+				Utill.closeConnection();
 
 			} catch (Exception ex) {
 
@@ -159,7 +159,7 @@ public class DAOemail extends Utill implements IDAO<Emaill> {
 
 		try {
 
-			Utill.open();
+			Utill.openConnection();
 			pstm = connection.prepareStatement(sql);
 			pstm.setInt(1, object.getId());
 			pstm.executeQuery();
@@ -172,7 +172,7 @@ public class DAOemail extends Utill implements IDAO<Emaill> {
 
 			try {
 
-				Utill.close();
+				Utill.closeConnection();
 
 			} catch (Exception ex) {
 
@@ -189,7 +189,7 @@ public class DAOemail extends Utill implements IDAO<Emaill> {
 
 		try {
 
-			Utill.open();
+			Utill.openConnection();
 			pstm = connection.prepareStatement(sql);
 			resultSet = pstm.executeQuery();
 
@@ -222,7 +222,7 @@ public class DAOemail extends Utill implements IDAO<Emaill> {
 
 		try {
 
-			Utill.open();
+			Utill.openConnection();
 			pstm = connection.prepareStatement(sql);
 			pstm.setInt(1, id);
 			resultSet = pstm.executeQuery();
@@ -241,7 +241,7 @@ public class DAOemail extends Utill implements IDAO<Emaill> {
 
 			try {
 
-				Utill.close();
+				Utill.closeConnection();
 
 			} catch (Exception e) {
 

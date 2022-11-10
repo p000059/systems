@@ -15,7 +15,7 @@ public class DAOPersonEmail extends Utill implements IDAO<PersonEmail> {
 
 		try {
 
-			Utill.open();
+			Utill.openConnection();
 			pstm = connection.prepareStatement(sql);
 			pstm.setInt(1, object.getPerson_id());
 			pstm.setInt(2, object.getEmail_id());
@@ -29,7 +29,7 @@ public class DAOPersonEmail extends Utill implements IDAO<PersonEmail> {
 
 			try {
 
-				Utill.close();
+				Utill.closeConnection();
 
 			} catch (Exception ex) {
 
@@ -73,7 +73,7 @@ public class DAOPersonEmail extends Utill implements IDAO<PersonEmail> {
 
 			try {
 
-				Utill.close();
+				Utill.closeConnection();
 
 			} catch (Exception e) {
 

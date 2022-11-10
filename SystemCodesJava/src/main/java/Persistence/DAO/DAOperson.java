@@ -14,7 +14,7 @@ public class DAOperson extends Util {
 
 		try {
 
-			open();
+			openConnnection();
 			preparedStatement = connection.prepareStatement("SELECT * FROM person WHERE id = ?");
 			resultSet = preparedStatement.executeQuery();
 
@@ -32,7 +32,7 @@ public class DAOperson extends Util {
 
 		} finally {
 
-			close();
+			closeConnection();
 			preparedStatement.close();
 		}
 
@@ -46,7 +46,7 @@ public class DAOperson extends Util {
 
 		try {
 
-			open();
+			openConnnection();
 			preparedStatement = connection.prepareStatement("SELECT * FROM person");
 			resultSet = preparedStatement.executeQuery();
 
@@ -65,7 +65,7 @@ public class DAOperson extends Util {
 		} finally {
 
 			preparedStatement.close();
-			close();
+			closeConnection();
 
 		}
 
@@ -76,7 +76,7 @@ public class DAOperson extends Util {
 
 		try {
 
-			open();
+			openConnnection();
 			preparedStatement = connection.prepareStatement("INSERT INTO person (name) VALUES(?)");
 			preparedStatement.setString(1, person.getName());
 			
@@ -89,7 +89,7 @@ public class DAOperson extends Util {
 		} finally {
 
 			preparedStatement.close();
-			close();
+			closeConnection();
 		}
 	}
 
@@ -97,7 +97,7 @@ public class DAOperson extends Util {
 
 		try {
 
-			open();
+			openConnnection();
 			preparedStatement = connection.prepareStatement("UPDATE person name = ? , email = ? WHERE id = ?");
 			preparedStatement.setString(1, person.getName());
 			preparedStatement.setInt(2, person.getId());
@@ -110,7 +110,7 @@ public class DAOperson extends Util {
 		} finally {
 
 			preparedStatement.close();
-			close();
+			closeConnection();
 		}
 	}
 
@@ -118,7 +118,7 @@ public class DAOperson extends Util {
 
 		try {
 
-			open();
+			openConnnection();
 			preparedStatement = connection.prepareStatement("DELETE FROM person WHERE id = ?");
 			preparedStatement.setInt(1, person.getId());
 			preparedStatement.execute();
@@ -130,7 +130,7 @@ public class DAOperson extends Util {
 		} finally {
 
 			preparedStatement.close();
-			close();
+			closeConnection();
 		}
 
 	}

@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class Utill {
 
 	private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-	private static final String URL = "jdbc:mysql://localhost:3306/dbspringboot";
+	private static final String URL = "jdbc:mysql://localhost:3306/dbcodes";
 	private static final String USER = "DBUSER";
 	private static final String PASSWORD = "mysql";
 
@@ -17,7 +17,7 @@ public class Utill {
 	protected static PreparedStatement pstm;
 	protected static ResultSet resultSet;
 
-	public static Connection open() throws Exception {
+	public static Connection openConnection() throws Exception {
 
 		try {
 
@@ -39,7 +39,7 @@ public class Utill {
 		return connection;
 	}
 
-	public static void close() throws Exception {
+	public static void closeConnection() throws Exception {
 
 		try {
 

@@ -3,11 +3,9 @@ package Persistence.Util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-import javax.swing.JOptionPane;
-
 public class SingleConnection {
 
-	private static String url = "jdbc:mysql://localhost:3306/sysgithub";
+	private static String url = "jdbc:mysql://localhost:3306/dbcodes";
 	private static String password = "mysql";
 	private static String user = "DBUSER";
 	private static Connection connection = null;
@@ -25,14 +23,18 @@ public class SingleConnection {
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				connection = DriverManager.getConnection(url, user, password);
 				connection.setAutoCommit(false);
-				JOptionPane.showMessageDialog(null, connection + " -> Conexão estabelecida!");
+				
+				System.out.println(connection + " -> Conexão estabelecida!");
 			}
+			
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, e.getMessage());
+			
+			System.out.println(e.getMessage());
 		}
 	}
 
-	public static Connection getConnection() {
+	public static Connection openConnection() {
+		
 		return connection;
 	}
 }

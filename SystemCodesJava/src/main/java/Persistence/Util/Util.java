@@ -14,9 +14,9 @@ public class Util {
 	protected ResultSet resultSet;
 	protected CallableStatement callableStatement;
 
-	public void open() throws Exception {
+	public void openConnnection() throws Exception {
 
-		String url = "jdbc:mysql://localhost:3306/dbspringboot";
+		String url = "jdbc:mysql://localhost:3306/dbcodes";
 		String user = "DBUSER";
 		String password = "mysql";
 		String driver = "com.mysql.cj.jdbc.Driver";
@@ -33,7 +33,7 @@ public class Util {
 		}
 	}
 
-	public void close() throws Exception {
+	public void closeConnection() throws Exception {
 
 		try {
 			

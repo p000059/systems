@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import Class.Product;
+import Class.SubClass.Product;
 
 public class FilterForeach {
 

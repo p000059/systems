@@ -4,36 +4,26 @@
       http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 	version="2.0">
 
-	<persistence-unit name="dbPerson" transaction-type="RESOURCE_LOCAL">
-
-		<!-- provider/JPA implementation -->
-		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-
-		<!-- Mapped Entities -->
-		<class>Persistence.Person</class>
-		
-
+	<persistence-unit name="dbcodes"
+		transaction-type="RESOURCE_LOCAL">
 		<properties>
 			<!-- Connection Settings -->
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bdentity" />
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/bdcodes" />
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.user" value="DBUSER" />
-			<property name="javax.persistence.jdbc.password" value="mysql" />
+			<property name="javax.persistence.jdbc.password"
+				value="mysql" />
 
 			<!-- HIBERNATE Properties -->
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQL8Dialect" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
-		
 
 			<!-- Update the bank, generates the table if necessary -->
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 		</properties>
 	</persistence-unit>
-
 </persistence>
-
-<!-- 
-	?useSSL=false&amp;serverTimezone=UTC
-		
- -->

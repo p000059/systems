@@ -15,7 +15,7 @@ public class DAOpersonn extends Utill implements IDAO<Personn> {
 
 		try {
 
-			Utill.open();
+			Utill.openConnection();
 			pstm = connection.prepareStatement(sql);
 			pstm.setString(1, object.getName());
 			pstm.setBoolean(2, true);
@@ -29,7 +29,7 @@ public class DAOpersonn extends Utill implements IDAO<Personn> {
 
 			try {
 
-				Utill.close();
+				Utill.closeConnection();
 
 			} catch (Exception ex) {
 
@@ -47,7 +47,7 @@ public class DAOpersonn extends Utill implements IDAO<Personn> {
 
 		try {
 
-			Utill.open();
+			Utill.openConnection();
 			pstm = connection.prepareStatement(sql);
 			pstm.setInt(1, object);
 			resultSet = pstm.executeQuery();
@@ -68,7 +68,7 @@ public class DAOpersonn extends Utill implements IDAO<Personn> {
 
 			try {
 
-				Utill.close();
+				Utill.closeConnection();
 
 			} catch (Exception ex) {
 
@@ -89,7 +89,7 @@ public class DAOpersonn extends Utill implements IDAO<Personn> {
 
 		try {
 
-			Utill.open();
+			Utill.openConnection();
 			pstm = connection.prepareStatement(sql);
 			resultSet = pstm.executeQuery();
 
@@ -111,7 +111,7 @@ public class DAOpersonn extends Utill implements IDAO<Personn> {
 
 			try {
 
-				Utill.close();
+				Utill.closeConnection();
 
 			} catch (Exception e) {
 
@@ -129,7 +129,7 @@ public class DAOpersonn extends Utill implements IDAO<Personn> {
 
 		try {
 
-			Utill.open();
+			Utill.openConnection();
 			pstm = connection.prepareStatement(sql);
 			pstm.setString(1, object.getName());
 			pstm.setBoolean(2, object.getStatus());
@@ -144,7 +144,7 @@ public class DAOpersonn extends Utill implements IDAO<Personn> {
 
 			try {
 
-				Utill.close();
+				Utill.closeConnection();
 
 			} catch (Exception e) {
 
@@ -160,7 +160,7 @@ public class DAOpersonn extends Utill implements IDAO<Personn> {
 
 		try {
 
-			Utill.open();
+			Utill.openConnection();
 			pstm = connection.prepareStatement(sql);
 			pstm.setInt(1, object.getId());
 			pstm.executeQuery();
@@ -173,7 +173,7 @@ public class DAOpersonn extends Utill implements IDAO<Personn> {
 
 			try {
 
-				Utill.close();
+				Utill.closeConnection();
 
 			} catch (Exception ex) {
 
@@ -190,7 +190,7 @@ public class DAOpersonn extends Utill implements IDAO<Personn> {
 
 		try {
 
-			Utill.open();
+			Utill.openConnection();
 			pstm = connection.prepareStatement(sql);
 			resultSet = pstm.executeQuery();
 
@@ -207,7 +207,7 @@ public class DAOpersonn extends Utill implements IDAO<Personn> {
 
 			try {
 
-				Utill.close();
+				Utill.closeConnection();
 
 			} catch (Exception e) {
 

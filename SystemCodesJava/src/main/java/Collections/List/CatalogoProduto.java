@@ -2,7 +2,7 @@ package Collections.List;
 
 import java.util.List;
 
-import Class.Produto;
+import Class.SubClass.Produto;
 
 
 public class CatalogoProduto<T> {

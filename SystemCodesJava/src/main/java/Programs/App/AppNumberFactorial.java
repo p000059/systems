@@ -12,6 +12,6 @@ public class AppNumberFactorial {
 
 		int number = numberFactorial.numberFactor(3);
 
-		JOptionPane.showMessageDialog(null, "Factorial Number: " + number);
+		JOptionPane.showMessageDialog(null, "Factorial Numbers: " + number);
 	}
 }

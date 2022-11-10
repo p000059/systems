@@ -17,7 +17,7 @@ public class PrimeNumber {
 	public boolean chechPrimeNumberInLoop(int number) {
 		for (int i = 2; i < number; i++) {
 			
-			// Number with division remainder equal to 1 is odd.
+			// Numbers with division remainder equal to 1 is odd.
 			if (number % i == 1) {
 									
 				return true;
