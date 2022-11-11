@@ -15,11 +15,16 @@ public class ConnectionFactory {
 
             Class.forName(DRIVER);
             return DriverManager.getConnection(URL, USER, PASSWORD);
+            
 
         } catch (Exception e) {
 
             throw new RuntimeException("Connection Error: " + e.getMessage());
-        }
+            
+        } finally {
+			
+        	System.out.println("Successfly Connected");
+		}
     }
 
     public static void closeConnection(Connection connection) {

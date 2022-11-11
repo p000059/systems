@@ -140,5 +140,4 @@ public class CreateList {
 			JOptionPane.showMessageDialog(null, "Opção Invalida!");
 		}
 	}
-
 }

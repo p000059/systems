@@ -1,12 +1,28 @@
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import org.junit.jupiter.api.Test;
-
-import Persistence.Util.HibernateUtil;
 
 public class TestHibernateUtil {
 
 	@Test
 	public void testConnectionUtil() {
 		
-		HibernateUtil.getEntityManager();
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("dbcodes");
+		entityManagerFactory.close();
+		
+//		EntityManager entityManager = null;
+//		
+//		try {
+//			
+//			entityManager = HibernateUtil.getEntityManager();
+//			
+//		} catch (Exception e) {
+//			
+//			e.printStackTrace();
+//			
+//		} finally {
+//			
+//			entityManager.close();
+//		}
 	}
 }

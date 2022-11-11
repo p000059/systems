@@ -10,10 +10,10 @@ public class HibernateUtil {
 	private final static String PERSISTENCE_UNIT = "dbcodes";
 	
 	static {
-		initRead();
+		init();
 	}
 	
-	private static void initRead() {
+	private static void init() {
 		
 		try {
 			
