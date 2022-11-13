@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import Persistence.Util.HibernateUtil;
+import Persistence.Util.JPAutil;
 
 public class DALGeneric<T> {
 
@@ -23,7 +23,7 @@ public class DALGeneric<T> {
 		return entityManagerFactory.createEntityManager();
 	}
 	
-	private EntityManager entityManager = HibernateUtil.getEntityManager();
+	private EntityManager entityManager = JPAutil.openConnection();
 	
 	public void createGeneric(T entity) {
 

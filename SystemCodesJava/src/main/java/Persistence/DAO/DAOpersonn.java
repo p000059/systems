@@ -16,10 +16,10 @@ public class DAOpersonn extends Utill implements IDAO<Personn> {
 		try {
 
 			Utill.openConnection();
-			pstm = connection.prepareStatement(sql);
-			pstm.setString(1, object.getName());
-			pstm.setBoolean(2, true);
-			pstm.execute();
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, object.getName());
+			preparedStatement.setBoolean(2, true);
+			preparedStatement.execute();
 
 		} catch (Exception e) {
 
@@ -48,9 +48,9 @@ public class DAOpersonn extends Utill implements IDAO<Personn> {
 		try {
 
 			Utill.openConnection();
-			pstm = connection.prepareStatement(sql);
-			pstm.setInt(1, object);
-			resultSet = pstm.executeQuery();
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, object);
+			resultSet = preparedStatement.executeQuery();
 
 			if (resultSet.next()) {
 
@@ -90,8 +90,8 @@ public class DAOpersonn extends Utill implements IDAO<Personn> {
 		try {
 
 			Utill.openConnection();
-			pstm = connection.prepareStatement(sql);
-			resultSet = pstm.executeQuery();
+			preparedStatement = connection.prepareStatement(sql);
+			resultSet = preparedStatement.executeQuery();
 
 			while (resultSet.next()) {
 
@@ -130,11 +130,11 @@ public class DAOpersonn extends Utill implements IDAO<Personn> {
 		try {
 
 			Utill.openConnection();
-			pstm = connection.prepareStatement(sql);
-			pstm.setString(1, object.getName());
-			pstm.setBoolean(2, object.getStatus());
-			pstm.setInt(3, object.getId());
-			pstm.executeQuery();
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, object.getName());
+			preparedStatement.setBoolean(2, object.getStatus());
+			preparedStatement.setInt(3, object.getId());
+			preparedStatement.executeQuery();
 
 		} catch (Exception e) {
 
@@ -161,9 +161,9 @@ public class DAOpersonn extends Utill implements IDAO<Personn> {
 		try {
 
 			Utill.openConnection();
-			pstm = connection.prepareStatement(sql);
-			pstm.setInt(1, object.getId());
-			pstm.executeQuery();
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, object.getId());
+			preparedStatement.executeQuery();
 
 		} catch (Exception e) {
 
@@ -191,8 +191,8 @@ public class DAOpersonn extends Utill implements IDAO<Personn> {
 		try {
 
 			Utill.openConnection();
-			pstm = connection.prepareStatement(sql);
-			resultSet = pstm.executeQuery();
+			preparedStatement = connection.prepareStatement(sql);
+			resultSet = preparedStatement.executeQuery();
 
 			if (resultSet.next()) {
 

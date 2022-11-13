@@ -2,6 +2,9 @@ package Persistence.Util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import javax.transaction.Transaction;
 
 public class SingleConnection {
 
@@ -10,6 +13,8 @@ public class SingleConnection {
 	private static String user = "DBUSER";
 	private static Connection connection = null;
 
+	protected Transaction transaction;
+	
 	static {
 		connect();
 	}
@@ -23,8 +28,6 @@ public class SingleConnection {
 				Class.forName("com.mysql.cj.jdbc.Driver");
 				connection = DriverManager.getConnection(url, user, password);
 				connection.setAutoCommit(false);
-				
-				System.out.println(connection + " -> Conexão estabelecida!");
 			}
 			
 		} catch (Exception e) {
@@ -36,5 +39,20 @@ public class SingleConnection {
 	public static Connection openConnection() {
 		
 		return connection;
+	}
+	
+	public static void closeConnection(Connection connection) {
+		
+		try {
+			
+			if(connection != null) {
+				
+				connection.close();
+			}
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
 	}
 }

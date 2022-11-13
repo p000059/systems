@@ -16,10 +16,10 @@ public class DAOemail extends Utill implements IDAO<Emaill> {
 		try {
 
 			Utill.openConnection();
-			pstm = connection.prepareStatement(sql);
-			pstm.setString(1, object.getEmail());
-			pstm.setBoolean(2, object.getStatus());
-			pstm.execute();
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, object.getEmail());
+			preparedStatement.setBoolean(2, object.getStatus());
+			preparedStatement.execute();
 
 		} catch (Exception e) {
 
@@ -48,9 +48,9 @@ public class DAOemail extends Utill implements IDAO<Emaill> {
 		try {
 
 			Utill.openConnection();
-			pstm = connection.prepareStatement(sql);
-			pstm.setInt(1, object);
-			resultSet = pstm.executeQuery();
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, object);
+			resultSet = preparedStatement.executeQuery();
 
 			if (resultSet.next()) {
 
@@ -90,8 +90,8 @@ public class DAOemail extends Utill implements IDAO<Emaill> {
 		try {
 
 			Utill.openConnection();
-			pstm = connection.prepareStatement(sql);
-			resultSet = pstm.executeQuery();
+			preparedStatement = connection.prepareStatement(sql);
+			resultSet = preparedStatement.executeQuery();
 
 			while (resultSet.next()) {
 
@@ -130,10 +130,10 @@ public class DAOemail extends Utill implements IDAO<Emaill> {
 		try {
 
 			Utill.openConnection();
-			pstm = connection.prepareStatement(sql);
-			pstm.setString(1, object.getEmail());
-			pstm.setBoolean(2, object.getStatus());
-			pstm.setInt(3, object.getId());
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, object.getEmail());
+			preparedStatement.setBoolean(2, object.getStatus());
+			preparedStatement.setInt(3, object.getId());
 
 		} catch (Exception e) {
 
@@ -160,9 +160,9 @@ public class DAOemail extends Utill implements IDAO<Emaill> {
 		try {
 
 			Utill.openConnection();
-			pstm = connection.prepareStatement(sql);
-			pstm.setInt(1, object.getId());
-			pstm.executeQuery();
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, object.getId());
+			preparedStatement.executeQuery();
 
 		} catch (Exception e) {
 
@@ -190,8 +190,8 @@ public class DAOemail extends Utill implements IDAO<Emaill> {
 		try {
 
 			Utill.openConnection();
-			pstm = connection.prepareStatement(sql);
-			resultSet = pstm.executeQuery();
+			preparedStatement = connection.prepareStatement(sql);
+			resultSet = preparedStatement.executeQuery();
 
 			if (resultSet.next()) {
 
@@ -223,9 +223,9 @@ public class DAOemail extends Utill implements IDAO<Emaill> {
 		try {
 
 			Utill.openConnection();
-			pstm = connection.prepareStatement(sql);
-			pstm.setInt(1, id);
-			resultSet = pstm.executeQuery();
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, id);
+			resultSet = preparedStatement.executeQuery();
 
 			if (resultSet.next()) {
 

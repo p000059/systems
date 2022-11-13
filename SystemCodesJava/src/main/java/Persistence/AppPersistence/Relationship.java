@@ -5,7 +5,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import Persistence.Util.HibernateUtil;
+import Persistence.Util.JPAutil;
 
 public class Relationship {
 

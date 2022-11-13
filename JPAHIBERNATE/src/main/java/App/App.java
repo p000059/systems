@@ -1,15 +1,25 @@
 package App;
 
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.EntityManager;
+
+import Util.JPAUtil;
 
 public class App {
 
 	public static void main(String[] args) {
 		
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("dbcodes");
-		entityManagerFactory.close();
+		try {
+			
+			EntityManager entityManager = JPAUtil.openConnection();
+			System.out.println("\n\nSuccessfuly Connection -> " + entityManager.toString() + "\n\n");
+			
+		} catch (Exception e) {
 
+			System.out.println("\n\nError: \n\n" + e.getMessage());
+			
+		} finally {
+			
+			JPAUtil.closeConnection();			
+		}
 	}
-
 }

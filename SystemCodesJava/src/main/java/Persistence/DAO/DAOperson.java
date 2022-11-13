@@ -6,9 +6,9 @@ import java.util.List;
 import Persistence.Model.*;
 import Persistence.Util.*;
 
-public class DAOperson extends Util {
+public class DAOperson extends UtilConnection {
 
-	public Person readPerson(int id) throws Exception {
+	public Person readPerson(Long id) throws Exception {
 
 		Person person = null;
 
@@ -21,7 +21,7 @@ public class DAOperson extends Util {
 			if (resultSet.next()) {
 
 				person = new Person();
-				person.setId(resultSet.getInt("id"));
+				person.setId(resultSet.getLong("id"));
 				person.setName(resultSet.getString("name"));
 
 			}
@@ -53,7 +53,7 @@ public class DAOperson extends Util {
 			while (resultSet.next()) {
 
 				person = new Person();
-				person.setId(resultSet.getInt("id"));
+				person.setId(resultSet.getLong("id"));
 				person.setName(resultSet.getString("name"));
 				lstPerson.add(person);
 			}
@@ -100,7 +100,7 @@ public class DAOperson extends Util {
 			openConnnection();
 			preparedStatement = connection.prepareStatement("UPDATE person name = ? , email = ? WHERE id = ?");
 			preparedStatement.setString(1, person.getName());
-			preparedStatement.setInt(2, person.getId());
+			preparedStatement.setFloat(2, person.getId());
 			preparedStatement.execute();
 
 		} catch (Exception e) {
@@ -120,7 +120,7 @@ public class DAOperson extends Util {
 
 			openConnnection();
 			preparedStatement = connection.prepareStatement("DELETE FROM person WHERE id = ?");
-			preparedStatement.setInt(1, person.getId());
+			preparedStatement.setFloat(1, person.getId());
 			preparedStatement.execute();
 
 		} catch (Exception e) {

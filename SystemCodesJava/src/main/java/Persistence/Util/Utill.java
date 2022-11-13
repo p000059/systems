@@ -14,7 +14,7 @@ public class Utill {
 	private static final String PASSWORD = "mysql";
 
 	protected static Connection connection;
-	protected static PreparedStatement pstm;
+	protected static PreparedStatement preparedStatement;
 	protected static ResultSet resultSet;
 
 	public static Connection openConnection() throws Exception {
@@ -36,6 +36,7 @@ public class Utill {
 
 			e.printStackTrace();
 		}
+		
 		return connection;
 	}
 
@@ -48,9 +49,9 @@ public class Utill {
 				connection.close();
 			}
 
-			if ((pstm != null)) {
+			if ((preparedStatement != null)) {
 
-				pstm.close();
+				preparedStatement.close();
 			}
 
 			if ((resultSet != null)) {

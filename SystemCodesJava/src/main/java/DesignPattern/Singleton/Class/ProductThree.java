@@ -7,7 +7,7 @@ public class ProductThree implements Products {
 	@Override
 	public String text() {
 		
-		return "Product Three";
+		return "ProductOne Three";
 	}
 
 }

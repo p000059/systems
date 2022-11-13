@@ -6,6 +6,6 @@ public class ProductOne implements Products {
 
 	public String text() {
 		
-		return "Product One";
+		return "ProductOne One";
 	}
 }

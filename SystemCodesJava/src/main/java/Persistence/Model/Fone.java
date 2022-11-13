@@ -8,57 +8,38 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Builder
 @Entity
 public class Fone implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	@EqualsAndHashCode.Include
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id_fone")
-	private Long idFone;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private Long id;
 
-	@Column(name = "tp_fone", nullable = false)
-	private String tpFone;
+	@Column(name = "type", nullable = false)
+	private String typeFone;
 
-	@Column(name = "nr_fone", nullable = false)
-	private String nrFone;
+	@Column(name = "number", nullable = false)
+	private String numberFone;
 
-	@ManyToOne(cascade = CascadeType.ALL, optional = false, fetch = FetchType.EAGER)
-	private Person person;
-
-	public Person getPerson() {
-		return person;
-	}
-
-	public void setPerson(Person person) {
-		this.person = person;
-	}
-
-	public Long getIdFone() {
-		return idFone;
-	}
-
-	public void setIdFone(Long idFone) {
-		this.idFone = idFone;
-	}
-
-	public String getTpFone() {
-		return tpFone;
-	}
-
-	public void setTpFone(String tpFone) {
-		this.tpFone = tpFone;
-	}
-
-	public String getNrFone() {
-		return nrFone;
-	}
-
-	public void setNrFone(String nrFone) {
-		this.nrFone = nrFone;
-	}
-
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "person_id")
+	private Person person;	
 }

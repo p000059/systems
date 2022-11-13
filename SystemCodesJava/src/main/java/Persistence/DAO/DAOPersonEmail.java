@@ -16,10 +16,10 @@ public class DAOPersonEmail extends Utill implements IDAO<PersonEmail> {
 		try {
 
 			Utill.openConnection();
-			pstm = connection.prepareStatement(sql);
-			pstm.setInt(1, object.getPerson_id());
-			pstm.setInt(2, object.getEmail_id());
-			pstm.execute();
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, object.getPerson_id());
+			preparedStatement.setInt(2, object.getEmail_id());
+			preparedStatement.execute();
 
 		} catch (Exception e) {
 
@@ -53,8 +53,8 @@ public class DAOPersonEmail extends Utill implements IDAO<PersonEmail> {
 
 		try {
 
-			pstm = connection.prepareStatement(sql);
-			resultSet = pstm.executeQuery();
+			preparedStatement = connection.prepareStatement(sql);
+			resultSet = preparedStatement.executeQuery();
 
 			while (resultSet.next()) {
 

@@ -12,11 +12,11 @@ public class SalaryIncrease
 		Salary salary = new Salary();
 		SalaryRule salaryRule = new SalaryRule();
 		
-		salary.setSalary(Float.parseFloat(JOptionPane.showInputDialog("Enter the Salary: ")));
+		salary.setSalary(Float.parseFloat(JOptionPane.showInputDialog("Enter the SalaryBase: ")));
 		double increase = 50.0;
 		
 		salaryFinal = salaryRule.salary(salary.getSalary(), increase);
 		
-		JOptionPane.showMessageDialog(null, "Salary = " + salaryFinal);
+		JOptionPane.showMessageDialog(null, "SalaryBase = " + salaryFinal);
 	}
 }

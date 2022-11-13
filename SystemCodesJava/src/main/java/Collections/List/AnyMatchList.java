@@ -32,7 +32,7 @@ public class AnyMatchList {
         lstProduct.add(objOneProduct);
         lstProduct.add(objTwoProduct);
 
-//        for(Product objProduct: lstProduct){
+//        for(ProductOne objProduct: lstProduct){
 //            if(objProduct.getCode().equals("a000002")){
 //                code = true;
 //                break;
