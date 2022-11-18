@@ -1,137 +1,34 @@
 package Persistence.DAO;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import Persistence.Model.*;
-import Persistence.Util.*;
+import javax.persistence.EntityManager;
+import javax.transaction.Transaction;
+import Persistence.Model.Class.Person;
+import Persistence.Util.JPAutil;
 
-public class DAOperson extends UtilConnection {
+public class DAOperson {
+	
+	EntityManager entityManager;
+	Transaction transaction;
 
-	public Person readPerson(Long id) throws Exception {
-
-		Person person = null;
-
+	public Person findbyId(Long id) {
+		
+		Person person = new Person();
+		
 		try {
-
-			openConnnection();
-			preparedStatement = connection.prepareStatement("SELECT * FROM person WHERE id = ?");
-			resultSet = preparedStatement.executeQuery();
-
-			if (resultSet.next()) {
-
-				person = new Person();
-				person.setId(resultSet.getLong("id"));
-				person.setName(resultSet.getString("name"));
-
-			}
-
-		} catch (Exception e) {
-
-			System.out.println(e.getMessage());
-
-		} finally {
-
-			closeConnection();
-			preparedStatement.close();
-		}
-
-		return person;
-	}
-
-	public List<Person> readPersons() throws Exception {
-
-		List<Person> lstPerson = new ArrayList<>();
-		Person person = null;
-
-		try {
-
-			openConnnection();
-			preparedStatement = connection.prepareStatement("SELECT * FROM person");
-			resultSet = preparedStatement.executeQuery();
-
-			while (resultSet.next()) {
-
-				person = new Person();
-				person.setId(resultSet.getLong("id"));
-				person.setName(resultSet.getString("name"));
-				lstPerson.add(person);
-			}
-
-		} catch (Exception e) {
-
-			System.out.println(e.getMessage());
-
-		} finally {
-
-			preparedStatement.close();
-			closeConnection();
-
-		}
-
-		return lstPerson;
-	}
-
-	public void createPerson(Person person) throws Exception {
-
-		try {
-
-			openConnnection();
-			preparedStatement = connection.prepareStatement("INSERT INTO person (name) VALUES(?)");
-			preparedStatement.setString(1, person.getName());
 			
-			preparedStatement.execute();
-
-		} catch (SQLException e) {
-
-			System.out.println(e.getMessage());
-
-		} finally {
-
-			preparedStatement.close();
-			closeConnection();
-		}
-	}
-
-	public void updatePerson(Person person) throws Exception {
-
-		try {
-
-			openConnnection();
-			preparedStatement = connection.prepareStatement("UPDATE person name = ? , email = ? WHERE id = ?");
-			preparedStatement.setString(1, person.getName());
-			preparedStatement.setFloat(2, person.getId());
-			preparedStatement.execute();
-
+			entityManager = JPAutil.openConnection();
+			person = entityManager.find(Person.class, id);
+			
+			
 		} catch (Exception e) {
-
-			System.out.println(e.getMessage());
-
+			
+			e.printStackTrace();
+			
 		} finally {
-
-			preparedStatement.close();
-			closeConnection();
+			
+			entityManager.close();
 		}
-	}
-
-	public void deletePerson(Person person) throws Exception {
-
-		try {
-
-			openConnnection();
-			preparedStatement = connection.prepareStatement("DELETE FROM person WHERE id = ?");
-			preparedStatement.setFloat(1, person.getId());
-			preparedStatement.execute();
-
-		} catch (Exception e) {
-
-			System.out.println(e.getMessage());
-
-		} finally {
-
-			preparedStatement.close();
-			closeConnection();
-		}
-
+		
+		return person;
 	}
 }

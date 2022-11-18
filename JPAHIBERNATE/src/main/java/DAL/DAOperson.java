@@ -3,7 +3,7 @@ package DAL;
 import javax.persistence.EntityManager;
 import javax.transaction.Transaction;
 
-import Model.Person;
+import Model.Class.Person;
 import Util.JPAUtil;
 
 public class DAOperson {

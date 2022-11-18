@@ -3,7 +3,7 @@ package DAL;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
-import Model.Email;
+import Model.Class.Email;
 import Util.JPAUtil;
 
 public class DAOemail {

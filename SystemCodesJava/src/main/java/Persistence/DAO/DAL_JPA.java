@@ -3,14 +3,12 @@ package Persistence.DAO;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
-import Persistence.Model.Person;
-
+import Persistence.Model.Class.Person;
 
 public class DAL_JPA {
 
 	private static final EntityManagerFactory entityManagerFactory;
-    private static final String PERSISTENCE_UNIT_NAME = "JPADemo"; 
+    private static final String PERSISTENCE_UNIT_NAME = "dbcodes"; 
 
 	static {
 		
@@ -25,8 +23,6 @@ public class DAL_JPA {
 	public void save(Person objPerson) {
 		
 		try {
-			
-			objPerson.setName("Patolino");
 			
 			getEntityManager().getTransaction().begin();
 			getEntityManager().persist(objPerson);			

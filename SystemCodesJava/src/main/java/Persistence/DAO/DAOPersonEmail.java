@@ -2,8 +2,8 @@ package Persistence.DAO;
 
 import java.util.ArrayList;
 import java.util.List;
-import Persistence.Model.PersonEmail;
-import Persistence.Interface.IDAO;
+import Persistence.Model.Class.*;
+import Persistence.Model.Interface.*;
 import Persistence.Util.Utill;
 
 public class DAOPersonEmail extends Utill implements IDAO<PersonEmail> {

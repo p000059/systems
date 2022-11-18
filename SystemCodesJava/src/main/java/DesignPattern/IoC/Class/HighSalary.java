@@ -7,7 +7,7 @@ public class HighSalary implements Increase {
 	@Override
 	public double increase(double amount) {
 		
-		amount = amount + 70.0;
+		amount = amount + 80.0;
 		return amount;
 	}
 

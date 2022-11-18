@@ -14,7 +14,7 @@ public class TestJPAUtil {
 		try {
 			
 			entityManager = JPAUtil.openConnection();
-			System.out.println("Successfuly Connection -> " + entityManager.toString());
+			System.out.println("\n\nSuccessfuly Connection -> " + entityManager.toString() + "\n\n");
 			
 		} catch (Exception e) {
 			

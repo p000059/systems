@@ -3,8 +3,8 @@ import org.junit.jupiter.api.Test;
 
 import DAL.DAOemail;
 import DAL.DAOperson;
-import Model.Email;
-import Model.Person;
+import Model.Class.Email;
+import Model.Class.Person;
 
 public class TestEmail {
 

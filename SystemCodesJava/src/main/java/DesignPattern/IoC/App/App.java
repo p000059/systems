@@ -9,7 +9,7 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		Payment payment = new Payment(new LowSalary());
+		Payment payment = new Payment(new HighSalary());
 		
 		double tax = payment.increaseSalary(600.0);
 		
