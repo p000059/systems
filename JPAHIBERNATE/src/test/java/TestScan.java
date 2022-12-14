@@ -1,22 +1,19 @@
-package App;
-
 import java.util.Scanner;
 
-import javax.persistence.EntityManager;
+import org.junit.jupiter.api.Test;
 
-import Util.JPAUtil;
+public class TestScan {
 
-public class App {
-
-	public static void main(String[] args) {
+	@Test
+	public void testMain() {
 		
 		Scanner scan = new Scanner(System.in);
 		String s = scan.nextLine();
-        double d = scan.nextDouble();
+        Double d = scan.nextDouble();
         int i = scan.nextInt();
         // Write your code here.
 
-        System.out.println(s + " to HarckerRank's Java tutorials!");
+        System.out.println("String:   " + String.format("%-10s", s) + s.substring(1,4));
         System.out.println("Double: " + d);
         System.out.println("Int: " + i);
 	}

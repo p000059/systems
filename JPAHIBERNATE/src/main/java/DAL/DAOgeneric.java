@@ -1,6 +1,7 @@
 package DAL;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import javax.persistence.EntityManager;
 import Model.Interface.CRUD;
@@ -125,6 +126,8 @@ public class DAOgeneric<T> implements CRUD<T> {
 	@Override
 	public void delete(T object) {
 
+		Collection<String> cl = new ArrayList<>(); 
+		
 		try {
 
 			entityManager = JPAUtil.openConnection();
